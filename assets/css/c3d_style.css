@@ -1,0 +1,115 @@
+body {
+
+}
+
+.fluxElementDark1 {
+    background-color: rgba(0,0,0,0.75);
+}
+
+.fluxElementDark2 {
+    background-color: rgba(0,0,0,0.15);
+}
+
+.wallpaper1 {
+    background: url('../img/backgrounds/wallpaper1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.wallpaper2 {
+    background: url('../img/backgrounds/wallpaper2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.wallpaper3 {
+    background: url('../img/backgrounds/wallpaper3.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.wallpaper4 {
+    background: url('../img/backgrounds/wallpaper4.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.wallpaper5 {
+    background: url('../img/backgrounds/wallpaper5.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.wallpaper6 {
+    background: url('../img/backgrounds/wallpaper6.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#particles-js canvas {
+    display: block;
+    vertical-align: bottom;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+    transition: opacity .8s ease, transform 1.4s ease
+}
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0
+}
+
+.carousel-item {
+  height: 90vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* 0,0,0,0 - top left, top right, bottom right, bottom left */
+
+.rcTopLeft      {border-radius: 10px  0px  0px  0px;}
+.rcTopRight     {border-radius:  0px 10px  0px  0px;}
+.rcBottomLeft   {border-radius:  0px  0px  0px 10px;}
+.rcBottomRight  {border-radius: 10px  0px 10px  0px;}
+
+.rcTop          {border-radius: 10px 10px  0px  0px;}
+.rcBottom       {border-radius:  0px  0px 10px 10px;}
+
+.rcLeft         {border-radius: 10px  0px  0px 10px;}
+.rcRight        {border-radius:  0px 10px 10px  0px;}
+
+.rcAll          {border-radius: 10px 10px 10px 10px;}
+.rcNone         {border-radius:  0px  0px  0px  0px;}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.headerbg {
+  background-image: url('../img/carousel/image1.png');
+  background-size: cover;
+}

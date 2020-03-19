@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-react-helmet="lang">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport"           content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        
+        <title>C3T - Earn Dividends on TRON</title>
+        <link rel="stylesheet" href="./assets/css/arcadium.min.css">
+        <link rel="stylesheet" href="./assets/css/c3d_style.css">
+    </head>
+    
+    <body class="wallpaper1">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(0, 0, 0, 1);">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/coinsmall.png" width="45px" height="45px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                
+                <ul class="navbar-nav ml-auto">
+                    
+                </ul>
+            </div>   
+        </nav>
+        <br />
+        <br />
+        <br />
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 1);">
+            <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+            <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin,saturn-classic-dao-token,bitunits" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+        </nav>
+        
+        <div class="container" id="root">
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" style="background: rgba(0,0,0,0);">
+                        <div class="card-header" style="background: rgba(0,0,0,0.65);">My Wallet</div>
+                        <div class="card-body" style="background: rgba(0,0,0,0.65);">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h3 class="text-white"><span class="user-token-balance">0.00000000</span> C3T</h3>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h4 class="text-white">Balance</h4>
+                                    <p>
+                                        <span id="user-trx-balance">0.00000000</span> TRX<br />
+                                        <span id="user-usd-balance">0.00</span> USD
+                                    </p>
+                                </div>
+                                
+                                <div class="col text-center">
+                                    <h4 class="text-white">Dividends</h4>
+                                    <p>
+                                        <span class="user-dividends">0.00000000</span> TRX<br />
+                                        <span id="user-dividends-usd">0.00</span> USD
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <b><span>Reinvest ≈<div id="user-reinvest" style="display: inline">0.00</div> C3T</span></b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="background: rgba(0,0,0,0.65);">
+                            <div class="row">
+                                <div class="col"><button class="btn btn-block btn-primary btn-reinvest">Reinvest</button></div>
+                                <div class="col"><button class="btn btn-block btn-info btn-withdraw">Withdraw</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card" style="background: rgba(0,0,0,0);">
+                        <div class="card-header text-success" style="background: rgba(0,0,0,0.65);">Buy C3T</div>
+                        <div class="card-body" style="background: rgba(0,0,0,0.65);">
+                            <div class="row">
+                                <div class="col text-center">
+                                    1 C3T = <span id="rate-to-buy">0</span> TRX<br />
+                                    Available: <span id="user-wallet-balance">0</span> TRX<br />
+                                </div>
+                            </div>
+                            <br />
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control buy-input" placeholder="TRX to spend" /><br />
+                                    <input type="text" class="form-control token-input-buy" readonly="" value="0.00000000">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                            
+                            </div>
+                            
+                            <div class="b-calc-item ">
+                                 <div class="b-calc-item__block">
+                                     <div class="b-calc-item__block__right">
+                                       
+                                    </div>
+                                 </div>
+                                 <div class="b-calc-item__bottom"></div>
+                              </div>
+                        </div>
+                        <div class="card-footer" style="background: rgba(0,0,0,0.65);">
+                            <button class="btn btn-block btn-success btn-buy buy-token-button">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card" style="background: rgba(0,0,0,0);">
+                        <div class="card-header text-danger" style="background: rgba(0,0,0,0.65);">Sell C3T</div>
+                        <div class="card-body" style="background: rgba(0,0,0,0.65);">
+                            <div class="row">
+                                <div class="col text-center">
+                                    1 C3T = <span id="rate-to-sell" style="display: inline">0</span> TRX<br />
+                                    Available: <span class="user-token-balance">0.00000000</span> C3T<br />
+                                </div>
+                            </div>
+                            <br />
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control sell-input"><br />
+                                    <input type="text" class="form-control trx-input-sell" readonly="" value="0.00000000">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                            
+                            </div>
+                        </div>
+                        <div class="card-footer" style="background: rgba(0,0,0,0.65);">
+                            <button class="btn btn-block btn-danger btn-sell sell-token-button">Sell</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" style="background: rgba(0,0,0,0);">
+                        <div class="card-header text-warning" style="background: rgba(0,0,0,0.65);">Referral</div>
+                        <div class="card-body" style="background: rgba(0,0,0,0.65);">
+                            <div class="row">
+                                <div class="col">
+                                    <span>Your referral link:</span>
+                                    <input id="ref-url" class="form-control text-secondary" value="" readonly="">
+                                    <div style="font-size: 14px;">33% of the 10% purchase fee is commissioned to the referrer.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                            
+                            </div>
+                            
+                            <div class="row">
+                            
+                            </div>
+                        </div>
+                        <div class="card-footer" style="background: rgba(0,0,0,0.65);"></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card" style="background: rgba(0,0,0,0);">
+                        <div class="card-header text-info" style="background: rgba(0,0,0,0.65);">C3T Stats</div>
+                        <div class="card-body" style="background: rgba(0,0,0,0.65);">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <b><span style="display: inline" id="contract-trx-balance">0</span> TRX</b><br />
+                                    <small>Contract Holdings</small>
+                                </div>
+                                <div class="col text-center">
+                                    <b><span style="display: inline" id="contract-token-balance">0</span> C3T</b><br />
+                                    <small>Total Supply</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                            
+                            </div>
+                            
+                            <div class="row">
+                            
+                            </div>
+                        </div>
+                        <div class="card-footer text-white text-center" style="background: rgba(0,0,0,0.65);">
+                            <b class="text-danger">REMEMBER: </b>This is a game - not an investment platform!
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <br />
+
+            <div class="modal fade" tabindex="-1" id="instructions-modal" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Tutorial</h5>
+                            <button type="button" class="close"><span aria-hidden="true">×</span></button>
+                        </div>
+                        <div class="modal-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./assets/js/jquery.min.js"></script>
+		<script src="./assets/js/bootstrap.min.js"></script>
+		<script src="./assets/lib/contract_run.js"></script>
+        
+	   <script type="text/javascript">
+			function getCookie(name) {
+				var dc = document.cookie;
+				var prefix = name + "=";
+				var begin = dc.indexOf("; " + prefix);
+
+				if (begin == -1) {
+				  begin = dc.indexOf(prefix);
+				  if (begin != 0) return null;
+				}
+				else
+				{
+					begin += 2;
+					var end = document.cookie.indexOf(";", begin);
+					if (end == -1) {
+					end = dc.length;
+				  }
+				}
+
+				return decodeURI(dc.substring(begin + prefix.length, end));
+			}
+
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var theCookie = "masternode=" + url.searchParams.get("masternode");
+
+			if (url.searchParams.get("masternode") !== null) {
+			  var toSet = "masternode=" + url.searchParams.get("masternode");
+			  document.cookie=theCookie;
+			} else {
+
+			  var refCookie = getCookie("masternode");
+
+			  if (refCookie === null) {
+				console.log("Ref cookie was null. Setting to default.");
+				document.cookie = "masternode=TRC1hwc1JaBL9kGp6wFYYCXUF4FVinpqbV";
+			  } else {
+				// do nothing if the cookie is already set and there is no new mnode link
+			  }
+			}
+		</script>
+   </body>
+</html>

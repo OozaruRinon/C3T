@@ -1,446 +1,234 @@
 <!DOCTYPE html>
-<html lang="en" data-react-helmet="lang">
-   <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-		<link rel="stylesheet" href="./assets/amaran.min.css">
-		<title>P3T</title>
-		<link href="./assets/main.d83e4544.css" rel="stylesheet">
-		<script src="./assets/jquery.min.js"></script>
-		<script src="./assets/bootstrap.min.js"></script>
-		<script src="./assets/contract_run.js"></script>
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
-   </head>
-   <body>
-      <div class="b-container" id="root">
-         <div>
-            <div>
-               <div>
-                  <div>
-                     <header class="b-header">
-                        <div class="b-header-top">
-                           <div class="wrapper-content">
-                              <div class="b-header-top__wrapper">
-                                 <div>
-									 <a href="/" class="b-logo" style="display: inline-block; vertical-align: middle; margin-right: 15px;color: #c31928;font-size: 40px">
-										 <img src="/assets/p3t_logo.png">
-									 </a>
-									 <a class="btn-link-a" href="/" style="display: inline-block; color: white">Home</a>
-									 <a class="btn-link-a" target="" href="./dailyroi" style="display: inline-block; color: white">Daily ROI: Dividends+</a>
-									 <a class="btn-link-a" target="_blank" href="https://tronscan.org/#/contract/TEEEQGmbZoeHA24EVG91b6u9zsbWUfefPF" style="display: inline-block; color: white">Contract: P3T</a>
-									 <a class="btn-link-a" target="_blank" href="https://tronscan.org/#/contract/TKbDT4VAwaMENxQUfTih1TZELGndmzB2vz" style="display: inline-block; color: white">Contract: Daily ROI</a>
-									 <a class="btn-link-a" target="_blank" href="https://github.com/p3tron/p3tron.github.io" style="display: inline-block; color: white">Github</a>
-									 <a class="btn-link-a" target="_blank" href="https://t.me/p3t_en" style="display: inline-block; color: white">Telegram</a>
-									 <a class="btn-link-a" target="_blank" href="https://discord.gg/tx6k4tX" style="display: inline-block; color: white">Discord</a>
-								 </div>
-                                 <div class="b-header-right" style="display: none">
-                                    <button class="btn-work btn-trust">TRONLINK</button>
-                                    <div class="b-lang">
-                                       <div class="b-lang-top">
-                                          <div class="b-lang__flag"><span class="flag-icon flag-icon-gb"></span></div>
-                                          <span>EN</span>
-                                       </div>
-                                       <div class="b-lang-content">
-                                          <div class="b-lang-item">
-                                             <div class="b-lang__flag"><span class="flag-icon flag-icon-gb"></span></div>
-                                             <span>EN</span>
-                                          </div>
-                                          <div class="b-lang-item">
-                                             <div class="b-lang__flag"><span class="flag-icon flag-icon-id"></span></div>
-                                             <span>IND</span>
-                                          </div>
-                                          <div class="b-lang-item">
-                                             <div class="b-lang__flag"><span class="flag-icon flag-icon-ru"></span></div>
-                                             <span>RU</span>
-                                          </div>
-                                          <div class="b-lang-item">
-                                             <div class="b-lang__flag"><span class="flag-icon flag-icon-cn"></span></div>
-                                             <span>CN</span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </header>
-                     <div class="b-content">
-                        <div class="wrapper-content">
-                           <div class="b-content-row">
-                              <div class="b-block ">
-                                 <div class="b-block-title"><span>Balance of tokens</span></div>
-                                 <div class="b-block-balance"><b><span class="user-token-balance">0.00000000</span><sup>P3T</sup></b></div>
-                                 <div class="b-eth"><span><span id="user-trx-balance">0.00000000</span><sup>TRX</sup></span></div>
-                                 <div class="b-block-price"><span>The cost of tokens</span></div>
-                                 <div class="b-block-price b-block-price-f"><b>≈<div id="user-usd-balance" style="display: inline">0.00</div><sup>USD</sup></b></div>
-                              </div>
-                              <div class="b-block ">
-                                 <div class="b-block-title"><span>Savings</span></div>
-                                 <div class="b-block-balance"><b><span class="user-dividends">0.00000000</span><sup>TRX</sup></b></div>
-                                 <div class="b-eth"><span><div id="user-dividends-usd" style="display: inline">0.00</div><sup>USD</sup></span></div>
-                                 <div class="b-block-price"><span>Reinvest ≈<div id="user-reinvest" style="display: inline">0.00</div> P3T</span></div>
-                                 <div class="b-block-btns"><button class="b-block-btn btn-reinvest">Reinvest</button><button class="b-block-btn btn-withdraw">Withdraw</button></div>
-                              </div>
-                              <div class="b-block " style="display: none">
-                                 <div class="b-block-title"><span>Statistics of your income</span></div>
-                                 <table class="profit-table" style="color: rgb(255, 255, 255); height: 180px; font-size: 18px;">
-                                    <colgroup>
-                                       <col>
-                                       <col>
-                                    </colgroup>
-                                    <tbody>
-                                       <tr>
-                                          <td>Per day</td>
-                                          <td class="profit-td">0.00000000 <sup>TRX</sup></td>
-                                       </tr>
-                                       <tr>
-                                          <td>Per week</td>
-                                          <td class="profit-td">0.00000000 <sup>TRX</sup></td>
-                                       </tr>
-                                       <tr>
-                                          <td>Per month</td>
-                                          <td class="profit-td">0.00000000 <sup>TRX</sup></td>
-                                       </tr>
-                                       <tr>
-                                          <td>For all the time</td>
-                                          <td class="profit-td">0.00000000 <sup>TRX</sup></td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                           <div class="b-content-row">
-                              <div class="b-block b-block b-block-white ">
-                                 <div class="b-block-title"><span>Token network status</span></div>
-                                 <div class="b-item">
-                                    <div class="b-item__img">
-										<img style="width: 50%" src="./assets/tron_logo.png" alt="">
-									</div>
-                                    <div class="b-item__text">
-                                       <div class="b-item__text__top"><b><div style="display: inline" id="contract-trx-balance">0</div><sup>TRX</sup></b><span style="white-space: nowrap;">in the contract</span></div>
-                                       <p>TRX in P3T tokens</p>
-                                    </div>
-                                 </div>
-                                 <div class="b-item">
-									 <div class="b-item__img" style="text-align: center;">
-										<img src="./assets/p3t_logo2.png" alt="" style="max-width: 35px; height: auto;">
-									</div>
-                                    <div class="b-item__text">
-                                       <div class="b-item__text__top"><b><div style="display: inline" id="contract-token-balance">0</div><sup>P3T</sup></b></div>
-                                       <p>Total amount of tokens</p>
-                                    </div>
-                                 </div>
-                                 <button class="btn-block"><a href="https://tronscan.org/#/contract/TEEEQGmbZoeHA24EVG91b6u9zsbWUfefPF" target="_blank" style="color: white;">Check on TRONSCAN</a></button>
-                              </div>
-                              
-                           </div>
-                           <div class="b-content-row">
-                              <div class="b-calc-item ">
-                                 <div class="b-block-title"><span>Buy P3T</span></div>
-                                 <div class="b-calc-item__row">
-                                    <div class="b-calc-item__row__left">
-                                       <p>Price:</p>
-                                       <span>1<sup>P3T</sup> = <div id="rate-to-buy" style="display: inline">0</div><sup>TRX</sup></span>
-                                    </div>
-                                 </div>
-                                 <div class="b-calc-item__row">
-                                    <div class="b-calc-item__row__right"><span>Available: <span id="user-wallet-balance">0</span> TRX</span></div>
-                                 </div>
-                                 <div class="b-calc-item__block">
-                                    <div class="b-calc-item__block__left"><span>You give</span></div>
-                                    <div class="b-calc-item__block__right">
-                                       <div class="b-calc-item__block__content"><span>TRX</span></div>
-                                       <input type="text" class="b-calc-item__input buy-input" value="0">
-                                    </div>
-                                 </div>
-                                 <div class="b-calc-item__block">
-                                    <div class="b-calc-item__block__left"><span>You get</span></div>
-                                    <div class="b-calc-item__block__right">
-                                       <div class="b-calc-item__block__content"><span>P3T</span></div>
-                                       <input type="text" class="b-calc-item__input token-input-buy" readonly="" value="0.00000000">
-                                    </div>
-                                 </div>
-                                 <div class="b-calc-item__bottom"><button class="btn-calc btn-buy buy-token-button">Buy</button></div>
-                              </div>
-                              <div class="b-calc-item ">
-                                 <div class="b-block-title"><span>Sell P3T</span></div>
-                                 <div class="b-calc-item__row">
-                                    <div class="b-calc-item__row__left">
-                                       <p>Price:</p>
-                                       <span>1<sup>P3T</sup> = <div id="rate-to-sell" style="display: inline">0</div> <sup>TRX</sup></span>
-                                    </div>
-                                 </div>
-                                 <div class="b-calc-item__row">
-                                    <div class="b-calc-item__row__right"><span>Available: <span class="user-token-balance">0.00000000</span> P3T</span></div>
-                                 </div>
-                                 <div class="b-calc-item__block">
-                                    <div class="b-calc-item__block__left"><span>You give</span></div>
-                                    <div class="b-calc-item__block__right">
-                                       <div class="b-calc-item__block__content"><button class="btn-max">MAX</button><span>P3T</span></div>
-                                       <input type="text" class="b-calc-item__input sell-input" value="0">
-                                    </div>
-                                 </div>
-                                 <div class="b-calc-item__block">
-                                    <div class="b-calc-item__block__left"><span>You get</span></div>
-                                    <div class="b-calc-item__block__right">
-                                       <div class="b-calc-item__block__content"><span>TRX</span></div>
-                                       <input type="text" class="b-calc-item__input trx-input-sell" readonly="" value="0.00000000">
-                                    </div>
-                                 </div>
-                                 <div class="b-calc-item__bottom"><button class="btn-calc btn-sell sell-token-button">Sell</button></div>
-                              </div>
-                           </div>
-                           <div class="b-content-row" style="display: none;">
-                              <div class="b-info ">
-                                 <div class="b-info-top">
-                                    <div class="b-info-title"><span>Recent contract transactions</span></div>
-                                    <div class="b-info-row" style="margin-bottom: 11px; word-break: break-all;"><span style="margin-right: 15px; word-break: normal;">Address of the contract:</span><b>0x792e6c37ae5ced8202794af26671531195418616</b></div>
-                                    <div class="b-info-attention">
-                                       <div class="b-info-attention__ico"></div>
-                                       <span>Do not send the cryptocurrency directly to the contract</span>
-                                    </div>
-                                 </div>
-                                 <div class="b-info-bottom" style="padding-top: 6px;">
-                                    <div class="b-info-table">
-                                       <div class="b-info-table__wrap" style="">
-                                          <table>
-                                             <thead class="sticky-thead">
-                                                <tr>
-                                                   <td style="padding-left: 19px;"><span>Time (UTC)</span></td>
-                                                   <td><span>Sender</span></td>
-                                                   <td><span>TRX</span></td>
-                                                </tr>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <td>18.12.2018 16:57</td>
-                                                   <td>0xce5c6272ecc36c6bb65b25a9433e81e0a97374de</td>
-                                                   <td>0.00715000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>17.12.2018 17:25</td>
-                                                   <td>0x71ceb923022708aae2eec8bf772708e2a1f2d060</td>
-                                                   <td>0.29000000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>16.12.2018 20:35</td>
-                                                   <td>0x4bf803f98ec316eb1084e453f72c33b33cff8698</td>
-                                                   <td>15.50000000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>14.12.2018 17:04</td>
-                                                   <td>0x147b7d92c6385b4e4f4c9bd5cadf5268b64f33c2</td>
-                                                   <td>0.01000000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>14.12.2018 09:36</td>
-                                                   <td>0x147b7d92c6385b4e4f4c9bd5cadf5268b64f33c2</td>
-                                                   <td>0.10000000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>12.12.2018 08:48</td>
-                                                   <td>0x3fbd887f8281aa78af88dd04eb4409848726bdba</td>
-                                                   <td>0.01500000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>11.12.2018 11:12</td>
-                                                   <td>0x560df9adefe937d12c593fe900a6c2228baf0c5b</td>
-                                                   <td>0.80000000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>08.12.2018 09:51</td>
-                                                   <td>0xe93f4edd68c5177f59f00592a4e9a55a00648b25</td>
-                                                   <td>0.01000000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>08.12.2018 06:50</td>
-                                                   <td>0x54bc68f67d83722348fb2332b53f1844ff173112</td>
-                                                   <td>0.04000000</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>08.12.2018 06:49</td>
-                                                   <td>0x54bc68f67d83722348fb2332b53f1844ff173112</td>
-                                                   <td>0.01000000</td>
-                                                </tr>
-                                             </tbody>
-                                          </table>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="b-content-row">
-                              <div class="b-info b-info-two">
-                                 <div class="b-info-top">
-                                    <div class="b-info-title"><span>Referrals activity</span></div>
-                                    <div class="b-info-row" style="margin-bottom: 2px;"><span>Your referral link:</span><input id="ref-url" class="form-control" value="" readonly=""></div>
-                                    <div style="font-size: 14px;">33% of the 10% purchase fee is commissioned to the referrer.</div>
-                                 </div>
-                              </div>
-                           </div>
-                           
-                           <div class="b-content-row">
-                              <div class="b-col">
-                                 <div class="b-col-title"><span>Concept of P3T token</span></div>
-                                 <div class="b-desc-content">
-                                    <div class="b-desc">
-										<div class="b-desc-title"><span>1. How do you make money?</span></div>
-                                       <div class="b-desc-item">
-                                          <div class="b-desc-item__text">
-                                             <p>Commissions from buy, sell and transfer movements of P3T tokens.</p>
-                                             <p>Commissions from your referral links.</p>
-                                             <p>Dividends from subsequent games built on the P3T tokens.</p>
-                                          </div>
-                                       </div>
-                                       <div class="b-desc-title"><span>2. What is it «P3T Token»?</span></div>
-                                       <div class="b-desc-item">
-                                          <div class="b-desc-item__text">
-                                             <p>P3T is a decentralized infrastructure project created by a professional community in cryptography science, finance and investment-banking.</p>
-                                             <p>P3T creates an ecosystem of active crypto-investors based on the TRON blockchain, which can guarantee transparency, safety and liquidity.</p>
-                                             <p>P3T owners can get a return in P3T tokens, convertible to TRX when there are new platform users, new services implementation and partnership program’s cooperation.</p>
-                                          </div>
-                                       </div>
-                                       <div class="b-desc-title"><span>3. Mathematical model</span></div>
-                                       <div class="b-desc-item">
-                                          <div class="b-desc-item__text">
-                                             <p>Commission fee for deposit: 10% of the deposit amount.</p>
-                                             <p>Fee for withdrawal: 4% from the amount.</p>
-                                             <p>Commission fee for transfer to another wallet: 1% from transferred amount.</p>
-                                             <p>Example - You have bought 10 000 P3T for 100 TRX, than 10 TRX will be proportionally distributed through all P3T owners.</p>
-											 <p>33% of 10% charging fees sharing between users who has a referral link.</p>
-											 <p>According to this model token pricing balancing by supply and demand from ecosystem’s users, herewith token is secured from manipulation.</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="b-col">
-                                 <div class="b-col-title"><span>FAQ</span></div>
-                                 <div class="b-desc-content">
-                                    <div class="b-faq" id="accordionExample">
-										<div class="b-faq-item">
-                                          <button class="b-faq-item__top" type="button" data-toggle="collapse" data-target="#collapse20" aria-expanded="false"><span> How do you make money?</span><i class="fa fa-chevron-down"></i></button>
-                                          <div class="b-faq-item__content collapse show" id="collapse20" data-parent="#accordionExample" style="">
-                                             <div class="b-faq-item__content__wrap">
-                                                <p>Commissions from buy, sell and transfer movements of P3T tokens.<br>
-												Commissions from your referral links.<br>
-												Dividends from subsequent games built on the P3T tokens.</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="b-faq-item">
-                                          <button class="b-faq-item__top collapsed" type="button" data-toggle="collapse" data-target="#collapse13" aria-expanded="false"><span>Everything is operated through TRONLINK</span><i class="fa fa-chevron-down"></i></button>
-                                          <div class="b-faq-item__content collapse" id="collapse13" data-parent="#accordionExample" style="">
-                                             <div class="b-faq-item__content__wrap">
-                                                <p>TRONLINK is a cryptocurrency wallet integrated into Chrome. It is used to simplify TRX transactions or tokens TRX-20 in TRON network.</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="b-faq-item">
-                                          <button class="b-faq-item__top collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"><span>What are the comission rates?</span><i class="fa fa-chevron-down"></i></button>
-                                          <div class="b-faq-item__content collapse" id="collapse1" data-parent="#accordionExample" style="">
-                                             <div class="b-faq-item__content__wrap">
-                                                <p>Fee for deposit: 10%<br/>
-													Fee for withdrawal: 4%<br/>
-													Fee for transfer to another wallet: 1%<br/>
-													Example - When you buy 10 000 P3T for 100 TRX, 10 TRX will be proportionally distributed to all existing P3T owners.<br/>
-													33% of the 10% purchase fee is commissioned to the referrer.</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="b-faq-item">
-                                          <button class="b-faq-item__top collapsed" type="button" data-toggle="collapse" data-target="#collapse6"><span>What is savings?</span><i class="fa fa-chevron-down"></i></button>
-                                          <div class="b-faq-item__content collapse" id="collapse6" data-parent="#accordionExample">
-                                             <div class="b-faq-item__content__wrap">
-                                                <p>Your saving accumulates from the movements of P3T tokens and commission from your referral link. Accumulations are displayed in TRX. You can reinvest your saving for more P3T tokens or withdraw them to your TRON wallet.</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <footer class="b-footer">
-                        <div class="wrapper-content">
-                           <div class="b-footer-content">
-                              <div class="b-footer-left">
-                                 <a href="/" class="b-footer-logo"><img src="./assets/tron-logo-black-and-white.png" alt=""></a>
-                                 <div class="b-social">
-                                    <ul>
-									   <li><a href="https://t.me/p3t_en"><i class="fas fa-bullhorn"></i> <i class="fab fa-telegram"></i> P3T</a></li>
-                                       <li><a href="https://discord.gg/6WJeKS" target="_blank"><i class="fab fa-discord"></i> Discord server</a></li>
-									   <li>© 2018 12HourTeam. All Rights Reserved. </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </footer>
-                     <div class="modal fade" tabindex="-1" id="instructions-modal" data-backdrop="static" data-keyboard="false">
-                        <div class="modal-dialog">
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <h5 class="modal-title">Tutorial</h5>
-                                 <button type="button" class="close"><span aria-hidden="true">×</span></button>
-                              </div>
-                              <div class="modal-body"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport"           content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        
+        <title>C3T - Earn Dividends on TRON</title>
+        <link rel="stylesheet" href="./assets/css/arcadium.min.css">
+        <link rel="stylesheet" href="./assets/css/c3d_style.css">
+    </head>
+    
+    <body class="is-preload wallpaper6">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(0, 0, 0, 1);">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/coinsmall.png" width="45px" height="45px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                
+                <ul class="navbar-nav ml-auto">
+                    
+                </ul>
             </div>
-         </div>
-      </div>
-	   <script type="text/javascript">
-			function getCookie(name) {
-				var dc = document.cookie;
-				var prefix = name + "=";
-				var begin = dc.indexOf("; " + prefix);
+        </nav>
+        <br />
+        <br />
+        <br />
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 1);">
+            <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+<coingecko-coin-price-marquee-widget  coin-ids="ethereum,bitcoin,tether" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+        </nav>
 
-				if (begin == -1) {
-				  begin = dc.indexOf(prefix);
-				  if (begin != 0) return null;
-				}
-				else
-				{
-					begin += 2;
-					var end = document.cookie.indexOf(";", begin);
-					if (end == -1) {
-					end = dc.length;
-				  }
-				}
+        <header>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active" style="background-image: url('assets/img/covers/cover1.png');"></div>
+                    <div class="carousel-item" style="background-image: url('assets/img/covers/cover2.png');"></div>
+                    <div class="carousel-item" style="background-image: url('assets/img/covers/cover3.png');"></div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </header>
+        
+        <section class="wallpaper1">
+            <div class="container">
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-md btn-block btn-success text-white" href="dashboard.html">Go to Dashboard</a><br />
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card-body rcAll text-white text-center">
+                            <h3 class="text-white">
+                                <img src="assets/img/coinsmall.png" width="30px" height="30px" /> <span class="contract-tokens"><img src="./assets/img/loader.svg"></span> C3D
+                            </h3>
+                            <small class="text-white">Current Supply</small>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card-body rcAll text-white text-center">
+                            <h3 class="text-white">
+                                <img src="assets/img/ethsmall.png" width="30px" height="30px" /> <span class="contract-balance"><img src="./assets/img/loader.svg"></span> ETH
+                            </h3>
+                            <small class="text-white">ETH Locked</small>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card-body rcAll text-white text-center">
+                            <h3 class="text-white">
+                                <img src="assets/img/dollarsmall.png" width="30px" height="30px" /> <span class="contract-balance-usd"><img src="./assets/img/loader.svg"></span>
+                            </h3>
+                            <small class="text-white">C3D Market Cap</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+        <section>
+            <div class="container">
+                <br />
+                <div class="row">
+                    <div class="col-md-6 animated fadeInDown delay-1s">
+                        <div class="card-body rcAll text-center text-white" style="background: rgba(0, 0, 0, 0.65);">
+                            <img src="assets/img/home/graphic_2.png" width="100%" height="100%" />
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-6 animated fadeInDown delay-1s">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card" style="background: rgba(0, 0, 0, 0);">
+                                <div class="card-header" style="background: rgba(0, 0, 0, 0.65);" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <h4>What is C3D?</h4>
+                                        </button>
+                                    </h5>
+                                </div>
 
-				return decodeURI(dc.substring(begin + prefix.length, end));
-			}
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body" style="background: rgba(0, 0, 0, 0.65);">
+                                        C3D is a Dividend-bearing token deployed on Ethereum, based upon the &quot;Hourglass&quot; contract. Holders of C3D receive Dividends, proportionate to their quantity of tokens. The C3D interface is built with Bootstrap 4, and is based on several different implementations and designs of the &quot;Proof of Weak Hands&quot; Dapp interfaces. 
+                                    <br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="background: rgba(0, 0, 0, 0);">
+                                <div class="card-header" style="background: rgba(0, 0, 0, 0.65);" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <h4>How does C3D work?</h4>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body" style="background: rgba(0, 0, 0, 0.65);">
+                                        When C3D is purchased, the price of each token rises by a small amount - and when tokens are sold, the price of each token lowers by a small amount. Every token is backed by the ETH stored in the C3D Smart Contract - meaning every token will always have value.<br />
+                                        <br />
+                                        Additionally, every <span class="text-info">Transfer</span>, <span class="text-warning">Trade</span>, <span class="text-success">Buy</span> or <span class="text-danger">Sell</span> of C3D has a flat fee of 10%. This fee makes up the ETH which is paid as Dividends to token holders.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="background: rgba(0, 0, 0, 0);">
+                                <div class="card-header" style="background: rgba(0, 0, 0, 0.65);" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <h4>How do I profit?</h4>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body" style="background: rgba(0, 0, 0, 0.65);">
+                                        There are several strategies you could follow - the best one is the one you form for yourself. When you have C3D, you&apos;re earning Dividends. Compound those Dividends into more C3D, and get more Dividends faster - or, withdraw those Dividends to your wallet, and HODL onto your existing C3D.<br />
+                                        <br />
+                                        Whatever you decide is up to you - do keep in mind, the market is constantly active, so the price / value could change at any time - it is up to <b><i>you</i></b> when you buy or sell C3D. It is for this reason that you should only invest with funds you are willing to lose.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                
+                <div class="row">
+                    <div class="col-md-4 animated fadeInDown delay-1s">
+                        <div class="card-body rcAll text-center text-white" style="background: rgba(0, 0, 0, 0.65);">
+                            <img src="assets/img/home/graphic_3.png" width="100%" height="100%" />
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-4 animated fadeInDown delay-1s">
+                        <div class="card-body rcAll text-center text-white" style="background: rgba(0, 0, 0, 0.65);">
+                            <img src="assets/img/home/graphic_4.png" width="100%" height="100%" />
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-4 animated fadeInDown delay-1s">
+                        <div class="card-body rcAll text-center text-white" style="background: rgba(0, 0, 0, 0.65);">
+                            <img src="assets/img/home/graphic_5.png" width="100%" height="100%" />
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+            </div>
+        </section>
+        
+        <section class="wallpaper6">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="card rcAll text-center" style="background: rgba(0, 0, 0, 0);">
+                        <div class="card-header rcTop text-center" style="background: rgba(0, 0, 0, 0.65);">
+                            <small class="text-center">
+                                C3D is <b class="text-danger">experimental technology</b>.<br />
+                                There is <b class="text-danger">no guarantee</b> of profit or gain.
+                            </small>
+                        </div>
+                        <div class="card-footer rcBottom text-center" style="background: rgba(0, 0, 0, 0.65);">
+                            <small class="text-center"><b>You</b> use C3D at <i>your own</i> risk.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <br />
+        </section>    
+    </body>
+    
+    <!-- Scripts -->
+    <!-- Bootstrap 4 and dependencies -->
+    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/popper.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    
+    <!-- Site-Specific dependencies -->
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/lib/customToolkit.js"></script>
+    <script src="assets/lib/viewportSizeController.js"></script>
 
-			var url_string = window.location.href;
-			var url = new URL(url_string);
-			var theCookie = "masternode=" + url.searchParams.get("masternode");
-
-			if (url.searchParams.get("masternode") !== null) {
-			  var toSet = "masternode=" + url.searchParams.get("masternode");
-			  document.cookie=theCookie;
-			} else {
-
-			  var refCookie = getCookie("masternode");
-
-			  if (refCookie === null) {
-				console.log("Ref cookie was null. Setting to default.");
-				document.cookie = "masternode=TRC1hwc1JaBL9kGp6wFYYCXUF4FVinpqbV";
-			  } else {
-				// do nothing if the cookie is already set and there is no new mnode link
-			  }
-			}
-		</script>
-   </body>
+    <!-- Dapp/Game Scripts -->
+    <script type="text/javascript" src="assets/js/web3.js"></script>
+    <script type="text/javascript" src="assets/js/alertify.js"></script>
+    <script type="text/javascript" src="assets/lib/C3D_Token.eth.js"></script>
 </html>
