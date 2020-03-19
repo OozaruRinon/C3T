@@ -19,7 +19,7 @@ body {
 }
 
 .wallpaper2 {
-    background: url('../img/backgrounds/wallpaper2.jpg') no-repeat center center fixed;
+    background: url('../img/backgrounds/wallpaper1.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -27,7 +27,7 @@ body {
 }
 
 .wallpaper3 {
-    background: url('../img/backgrounds/wallpaper3.jpg') no-repeat center center fixed;
+    background: url('../img/backgrounds/wallpaper1.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -35,7 +35,7 @@ body {
 }
 
 .wallpaper4 {
-    background: url('../img/backgrounds/wallpaper4.jpg') no-repeat center center fixed;
+    background: url('../img/backgrounds/wallpaper1.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -43,7 +43,7 @@ body {
 }
 
 .wallpaper5 {
-    background: url('../img/backgrounds/wallpaper5.jpg') no-repeat center center fixed;
+    background: url('../img/backgrounds/wallpaper1.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
