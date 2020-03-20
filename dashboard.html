@@ -30,10 +30,6 @@
         <br />
         <br />
         <br />
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 1);">
-            <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
-            <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin,saturn-classic-dao-token,bitunits" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
-        </nav>
         
         <div class="container" id="root">
             <br />
@@ -153,13 +149,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card" style="background: rgba(0,0,0,0);">
-                        <div class="card-header text-warning" style="background: rgba(0,0,0,0.65);">Referral</div>
+                        <div class="card-header text-warning" style="background: rgba(0,0,0,0.65);">Your Referral Link</div>
                         <div class="card-body" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
                                 <div class="col">
-                                    <span>Your referral link:</span>
                                     <input id="ref-url" class="form-control text-secondary" value="" readonly="">
-                                    <div style="font-size: 14px;">33% of the 10% purchase fee is commissioned to the referrer.</div>
                                 </div>
                             </div>
                             
@@ -171,7 +165,9 @@
                             
                             </div>
                         </div>
-                        <div class="card-footer" style="background: rgba(0,0,0,0.65);"></div>
+                        <div class="card-footer text-center" style="background: rgba(0,0,0,0.65);">
+                            <small>33% of the 10% purchase fee is commissioned to the referrer.</small>
+                        </div>
                     </div>
                 </div>
                 
@@ -188,14 +184,6 @@
                                     <b><span style="display: inline" id="contract-token-balance">0</span> C3T</b><br />
                                     <small>Total Supply</small>
                                 </div>
-                            </div>
-                            
-                            <div class="row">
-                            
-                            </div>
-                            
-                            <div class="row">
-                            
                             </div>
                         </div>
                         <div class="card-footer text-white text-center" style="background: rgba(0,0,0,0.65);">
@@ -220,6 +208,19 @@
                 </div>
             </div>
         </div>
+        
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto ml-auto">
+                    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                    <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin,saturn-classic-dao-token,bitunits" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+                </ul>
+            </div>
+        </nav>
+        
         <script src="./assets/js/jquery.min.js"></script>
 		<script src="./assets/js/bootstrap.min.js"></script>
 		<script src="./assets/lib/contract_run.js"></script>
