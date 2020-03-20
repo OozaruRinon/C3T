@@ -11,7 +11,7 @@ body {
 }
 
 .wallpaper1 {
-    background: url('../img/backgrounds/wallpaper1.jpg') no-repeat center center fixed;
+    background: url('../img/backgrounds/wallpaper1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
