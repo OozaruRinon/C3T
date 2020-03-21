@@ -20,13 +20,13 @@
 
             <div class="collapse navbar-collapse" id="navbarColor02">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home text-danger"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-chart-line text-danger"></i> Dashboard</a></li>
                 </ul>
                 
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/ArcadiumNetwork/C3T" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TAEeGcFq2ACNbKHpmL55pJktt6qfWeZ1Uq" target="_blank"><i class="fas fa-search-dollar"></i> Contract</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/ArcadiumNetwork/C3T" target="_blank"><i class="fab fa-github text-danger"></i> GitHub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TAEeGcFq2ACNbKHpmL55pJktt6qfWeZ1Uq" target="_blank"><i class="fas fa-search-dollar text-danger"></i> Contract</a></li>
                 </ul>
             </div>   
         </nav>
@@ -49,18 +49,18 @@
                             
                             <div class="row">
                                 <div class="col text-center">
-                                    <h4 class="text-white">Balance</h4>
+                                    <h5 class="text-white">Balance</h5>
                                     <p>
-                                        <span id="user-trx-balance">0.00000000</span> TRX<br />
-                                        <span id="user-usd-balance">0.00</span> USD
+                                        <img src="assets/img/coins/tron.png" width="20px" height="20px" /> <span id="user-trx-balance">0.00000000</span> TRX<br />
+                                        <img src="assets/img/coins/dollar.png" width="20px" height="20px" /> <span id="user-usd-balance">0.00</span> USD
                                     </p>
                                 </div>
                                 
                                 <div class="col text-center">
-                                    <h4 class="text-white">Dividends</h4>
+                                    <h5 class="text-white">Dividends</h5>
                                     <p>
-                                        <span class="user-dividends">0.00000000</span> TRX<br />
-                                        <span id="user-dividends-usd">0.00</span> USD
+                                        <img src="assets/img/coins/tron.png" width="20px" height="20px" /> <span class="user-dividends">0.00000000</span> TRX<br />
+                                        <img src="assets/img/coins/dollar.png" width="20px" height="20px" /> <span id="user-dividends-usd">0.00</span> USD
                                     </p>
                                 </div>
                             </div>
@@ -68,16 +68,15 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <b>
-                                        <span>If you reinvest your Dividends now, <br />
-                                        you&apos;ll receive about <div id="user-reinvest" style="display: inline">0.00</div> C3T</span>
+                                        <span>Reinvest your Dividends now to receive <div id="user-reinvest" style="display: inline">0.00</div> C3T.</span>
                                     </b>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
-                                <div class="col"><button class="btn btn-block btn-primary btn-reinvest"><i class="fas fa-recycle"></i> Reinvest</button></div>
-                                <div class="col"><button class="btn btn-block btn-info btn-withdraw"><i class="fas fa-hand-holding-usd"></i> Withdraw</button></div>
+                                <div class="col"><button class="btn btn-block btn-sm btn-primary btn-reinvest"><i class="fas fa-recycle"></i> Reinvest</button></div>
+                                <div class="col"><button class="btn btn-block btn-sm btn-info btn-withdraw"><i class="fas fa-hand-holding-usd"></i> Withdraw</button></div>
                             </div>
                         </div>
                     </div>
@@ -120,7 +119,7 @@
                               </div>
                         </div>
                         <div class="card-footer" style="background: rgba(0,0,0,0.65);">
-                            <button class="btn btn-block btn-success btn-buy buy-token-button"><i class="fas fa-plus"></i> Buy</button>
+                            <button class="btn btn-block btn-sm btn-success btn-buy buy-token-button"><i class="fas fa-plus"></i> Buy</button>
                         </div>
                     </div>
                     <br />
@@ -141,7 +140,7 @@
                             <div class="row">
                                 <div class="col">
                                     <label><small>C3T to Sell: </small></label>
-                                    <input type="text" class="form-control sell-input"><br />
+                                    <input type="text" class="form-control sell-input" placeholder="Min. 1 C3T"><br />
                                     
                                     <label><small>You&apos;ll Receive: </small></label>
                                     <input type="text" class="form-control trx-input-sell" readonly="" value="0.00000000">
@@ -153,7 +152,7 @@
                             </div>
                         </div>
                         <div class="card-footer" style="background: rgba(0,0,0,0.65);">
-                            <button class="btn btn-block btn-danger btn-sell sell-token-button"><i class="fas fa-minus"></i> Sell</button>
+                            <button class="btn btn-block btn-sm btn-danger btn-sell sell-token-button"><i class="fas fa-minus"></i> Sell</button>
                         </div>
                     </div>
                     <br />
@@ -167,20 +166,13 @@
                         <div class="card-body" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
                                 <div class="col">
-                                    <input id="ref-url" class="form-control text-secondary" value="" readonly="">
+                                    <input id="ref-url" class="form-control text-secondary" value="" readonly=""><br />
+                                    <button class="btn btn-block btn-sm btn-warning">Copy Link</button>
                                 </div>
-                            </div>
-                            
-                            <div class="row">
-                            
-                            </div>
-                            
-                            <div class="row">
-                            
                             </div>
                         </div>
                         <div class="card-footer text-center" style="background: rgba(0,0,0,0.65);">
-                            <small>33% of the 10% purchase fee is commissioned to the referrer.</small>
+                            <small>Earn 3% of all purchases which use your link!</small>
                         </div>
                     </div>
                     <br />
@@ -192,10 +184,12 @@
                         <div class="card-body" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
                                 <div class="col text-center">
+                                    <img src="assets/img/coins/tron.png" width="35px" height="35px" /><br />
                                     <b><span style="display: inline" id="contract-trx-balance">0</span> TRX</b><br />
                                     <small>Contract Holdings</small>
                                 </div>
                                 <div class="col text-center">
+                                    <img src="assets/img/coins/token.png" width="35px" height="35px" /><br />
                                     <b><span style="display: inline" id="contract-token-balance">0</span> C3T</b><br />
                                     <small>Total Supply</small>
                                 </div>
