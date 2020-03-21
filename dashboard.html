@@ -7,6 +7,8 @@
         <title>C3T - Earn Dividends on TRON</title>
         <link rel="stylesheet" href="./assets/css/arcadium.min.css">
         <link rel="stylesheet" href="./assets/css/c3d_style.css">
+        
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
     </head>
     
     <body class="wallpaper1">
@@ -23,8 +25,8 @@
                 </ul>
                 
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/ArcadiumNetwork/C3T" target="_blank">GitHub</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TAEeGcFq2ACNbKHpmL55pJktt6qfWeZ1Uq" target="_blank">Contract</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/ArcadiumNetwork/C3T" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TAEeGcFq2ACNbKHpmL55pJktt6qfWeZ1Uq" target="_blank"><i class="fas fa-search-dollar"></i> Contract</a></li>
                 </ul>
             </div>   
         </nav>
@@ -37,7 +39,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card" style="background: rgba(0,0,0,0);">
-                        <div class="card-header" style="background: rgba(0,0,0,0.65);">My Wallet</div>
+                        <div class="card-header" style="background: rgba(0,0,0,0.65);"><i class="fas fa-wallet"></i> My Wallet</div>
                         <div class="card-body" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
                                 <div class="col text-center">
@@ -65,14 +67,17 @@
                             
                             <div class="row">
                                 <div class="col text-center">
-                                    <b><span>Reinvest ≈<div id="user-reinvest" style="display: inline">0.00</div> C3T</span></b>
+                                    <b>
+                                        <span>If you reinvest your Dividends now, <br />
+                                        you&apos;ll receive about <div id="user-reinvest" style="display: inline">0.00</div> C3T</span>
+                                    </b>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
-                                <div class="col"><button class="btn btn-block btn-primary btn-reinvest">Reinvest</button></div>
-                                <div class="col"><button class="btn btn-block btn-info btn-withdraw">Withdraw</button></div>
+                                <div class="col"><button class="btn btn-block btn-primary btn-reinvest"><i class="fas fa-recycle"></i> Reinvest</button></div>
+                                <div class="col"><button class="btn btn-block btn-info btn-withdraw"><i class="fas fa-hand-holding-usd"></i> Withdraw</button></div>
                             </div>
                         </div>
                     </div>
@@ -81,19 +86,22 @@
                 
                 <div class="col-md-3">
                     <div class="card" style="background: rgba(0,0,0,0);">
-                        <div class="card-header text-success" style="background: rgba(0,0,0,0.65);">Buy C3T</div>
+                        <div class="card-header text-white" style="background: rgba(0,0,0,0.65);"><i class="fas fa-dollar-sign text-success"></i> Buy C3T</div>
                         <div class="card-body" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
                                 <div class="col text-center">
-                                    1 C3T = <span id="rate-to-buy">0</span> TRX<br />
-                                    Available: <span id="user-wallet-balance">0</span> TRX<br />
+                                    <h5 class="text-success"><span id="rate-to-buy">0</span> TRX</h5>
+                                    <b>Buy Price</b><br />
                                 </div>
                             </div>
                             <br />
                             
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" class="form-control buy-input" placeholder="TRX to spend" /><br />
+                                    <label><small>TRX to Spend: </small></label>
+                                    <input type="text" class="form-control buy-input" placeholder="Min. 1 TRX" /><br />
+                                    
+                                    <label><small>You&apos;ll Receive: </small></label>
                                     <input type="text" class="form-control token-input-buy" readonly="" value="0.00000000">
                                 </div>
                             </div>
@@ -112,7 +120,7 @@
                               </div>
                         </div>
                         <div class="card-footer" style="background: rgba(0,0,0,0.65);">
-                            <button class="btn btn-block btn-success btn-buy buy-token-button">Buy</button>
+                            <button class="btn btn-block btn-success btn-buy buy-token-button"><i class="fas fa-plus"></i> Buy</button>
                         </div>
                     </div>
                     <br />
@@ -120,19 +128,22 @@
                 
                 <div class="col-md-3">
                     <div class="card" style="background: rgba(0,0,0,0);">
-                        <div class="card-header text-danger" style="background: rgba(0,0,0,0.65);">Sell C3T</div>
+                        <div class="card-header text-white" style="background: rgba(0,0,0,0.65);"><i class="fas fa-dollar-sign text-danger"></i> Sell C3T</div>
                         <div class="card-body" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
                                 <div class="col text-center">
-                                    1 C3T = <span id="rate-to-sell" style="display: inline">0</span> TRX<br />
-                                    Available: <span class="user-token-balance">0.00000000</span> C3T<br />
+                                    <h5 class="text-danger"><span id="rate-to-sell" style="display: inline">0</span> TRX</h5>
+                                    <b>Sell Value</b><br />
                                 </div>
                             </div>
                             <br />
                             
                             <div class="row">
                                 <div class="col">
+                                    <label><small>C3T to Sell: </small></label>
                                     <input type="text" class="form-control sell-input"><br />
+                                    
+                                    <label><small>You&apos;ll Receive: </small></label>
                                     <input type="text" class="form-control trx-input-sell" readonly="" value="0.00000000">
                                 </div>
                             </div>
@@ -142,7 +153,7 @@
                             </div>
                         </div>
                         <div class="card-footer" style="background: rgba(0,0,0,0.65);">
-                            <button class="btn btn-block btn-danger btn-sell sell-token-button">Sell</button>
+                            <button class="btn btn-block btn-danger btn-sell sell-token-button"><i class="fas fa-minus"></i> Sell</button>
                         </div>
                     </div>
                     <br />
@@ -152,7 +163,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card" style="background: rgba(0,0,0,0);">
-                        <div class="card-header text-warning" style="background: rgba(0,0,0,0.65);">Your Referral Link</div>
+                        <div class="card-header text-white" style="background: rgba(0,0,0,0.65);"><i class="fas fa-user text-warning"></i> Referrals</div>
                         <div class="card-body" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
                                 <div class="col">
@@ -177,7 +188,7 @@
                 
                 <div class="col-md-6">
                     <div class="card" style="background: rgba(0,0,0,0);">
-                        <div class="card-header text-info" style="background: rgba(0,0,0,0.65);">C3T Stats</div>
+                        <div class="card-header text-white" style="background: rgba(0,0,0,0.65);"><i class="fas fa-coins text-info"></i> C3T Stats</div>
                         <div class="card-body" style="background: rgba(0,0,0,0.65);">
                             <div class="row">
                                 <div class="col text-center">
@@ -194,12 +205,11 @@
                             <b class="text-danger">REMEMBER: </b>This is a game - not an investment platform!
                         </div>
                     </div>
-                    <br />
-                    
+                    <br />    
                 </div>
-            </div>
-            <br />
 
+            </div>
+            
             <div class="modal fade" tabindex="-1" id="instructions-modal" data-backdrop="static" data-keyboard="false">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -217,15 +227,10 @@
         <br />
         
         <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto ml-auto">
-                    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
-                    <coingecko-coin-price-marquee-widget  coin-ids="tron,wink,bitcoin,tether" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
-                </ul>
-            </div>
+            <ul class="navbar-nav mr-auto ml-auto">
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                <coingecko-coin-price-marquee-widget  coin-ids="tron,wink,bitcoin,tether" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+            </ul>
         </nav>
         
         <script src="./assets/js/jquery.min.js"></script>
