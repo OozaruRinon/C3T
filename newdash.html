@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-react-helmet="lang">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport"           content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        
+        <title>ArcadiumTRX | Exchange</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/c3d_style.css">
+    </head>
+    
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">ArcadiumTRX</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="exchange.html">Exchange</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Invest</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
+                
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <br />
+        <br />
+        <br />
+        
+        <div class="container" id="root">
+            <br />
+            
+            <div class="row jumbotron bg-light text-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="text-dark"><span class="user-token-balance">0.00000000</span> XP</h3>
+                            <span id="user-trx-balance">0.00000000</span> TRX (<span id="user-usd-balance">0.00</span> USD)
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <button class="btn btn-block btn-primary btn-reinvest">Reinvest (+<span id="user-reinvest">0.00</span> XP)</button>
+                            <button class="btn btn-block btn-info btn-withdraw">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success text-center">
+                        You&apos;ve Earned <span class="user-dividends">0.00000000</span> TRX (<span id="user-dividends-usd">0.00</span> USD) of Dividends.<br />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="jumbotron bg-light text-left text-dark">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="text-dark"><span id="rate-to-buy">0</span> TRX</h1>
+                                    <small class="text-muted">Buy Price</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control buy-input" placeholder="TRX to spend" /><br />
+                                    <input type="text" class="form-control token-input-buy" readonly="" value="0.00000000"><br />
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <button class="btn btn-lg btn-success btn-buy buy-token-button">Buy XP</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="jumbotron bg-light text-left text-dark">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="text-dark"><span id="rate-to-sell">0</span> TRX</h1>
+                                    <small class="text-muted">Sell Price</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control sell-input" placeholder="Amount of XP"><br />
+                                    <input type="text" class="form-control trx-input-sell" readonly="" value="0.00000000"><br />
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <button class="btn btn-lg btn-danger btn-sell sell-token-button">Sell XP</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row jumbotron bg-light text-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input id="ref-url" class="form-control text-secondary" value="" readonly="" />
+                            <small class="text-muted">When others use your link, you get a commission!</small>
+                        </div>
+                        
+                        <div class="col-md-3 text-center">
+                            <b><span style="display: inline" id="contract-trx-balance">0</span> TRX</b><br />
+                            <small>Contract Holdings</small>
+                        </div>
+                        
+                        <div class="col-md-3 text-center">
+                            <b><span style="display: inline" id="contract-token-balance">0</span> XP</b><br />
+                            <small>Total Supply</small>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+            
+        <br />
+
+        <div class="modal fade" tabindex="-1" id="instructions-modal" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tutorial</h5>
+                        <button type="button" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        
+        <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/lib/contract_run.js"></script>
+        
+	   <script type="text/javascript">
+			function getCookie(name) {
+				var dc = document.cookie;
+				var prefix = name + "=";
+				var begin = dc.indexOf("; " + prefix);
+
+				if (begin == -1) {
+				  begin = dc.indexOf(prefix);
+				  if (begin != 0) return null;
+				}
+				else
+				{
+					begin += 2;
+					var end = document.cookie.indexOf(";", begin);
+					if (end == -1) {
+					end = dc.length;
+				  }
+				}
+
+				return decodeURI(dc.substring(begin + prefix.length, end));
+			}
+
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var theCookie = "masternode=" + url.searchParams.get("masternode");
+
+			if (url.searchParams.get("masternode") !== null) {
+			  var toSet = "masternode=" + url.searchParams.get("masternode");
+			  document.cookie=theCookie;
+			} else {
+
+			  var refCookie = getCookie("masternode");
+
+			  if (refCookie === null) {
+				console.log("Ref cookie was null. Setting to default.");
+				document.cookie = "masternode=TRC1hwc1JaBL9kGp6wFYYCXUF4FVinpqbV";
+			  } else {
+				// do nothing if the cookie is already set and there is no new mnode link
+			  }
+			}
+		</script>
+   </body>
+</html>
